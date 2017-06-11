@@ -1,0 +1,26 @@
+
+// convo handlers are registered with unique strings 
+
+const handleGoodDay = 'handleGoodDay'
+
+
+
+// handle any DM that starts with 'hi'
+
+slapp.message('^hi', 'direct_message', (msg) => {
+
+  // Ask how they are and route next message to handleGoodDay handler
+
+  msg.say('Are you having a good day?').route(handleGoodDay)
+
+})
+
+
+
+// register handleGoodDay handler
+
+slapp.route(handleGoodDay, (msg) => {
+
+  msg.say(':expressionless:')
+
+})
